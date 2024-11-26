@@ -45,9 +45,9 @@ SELECT COUNT(ssta.staff_id) as number_of_employees
 FROM sakila.staff as ssta;
 
 --  5.3 Determine how many films are available for rent and how many have been rented.
-SELECT COUNT(sr.rental_date) as rentadas,
-		COUNT(sr.return_date) as devueltas
-FROM sakila.rental as sr;
+SELECT COUNT(sr.rental_id) as rentadas,
+		COUNT(sf.film_id) as para_rentar
+FROM sakila.rental as sr, sakila.film as sf;
 
 --  5.4 Determine the number of distinct last names of the actors in the database.
 SELECT COUNT(distinct sac.last_name) as cantidad_apellidos
